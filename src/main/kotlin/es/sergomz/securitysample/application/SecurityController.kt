@@ -4,11 +4,11 @@ import es.sergomz.securitysample.config.jwt.JWTService
 import es.sergomz.securitysample.model.UserDTO
 import es.sergomz.securitysample.model.UserData
 import es.sergomz.securitysample.model.repository.UserDataRepository
-import org.springframework.security.access.annotation.Secured
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.*
 
-@RestController("/users")
+@RestController
+@RequestMapping("/users")
 class SecurityController(val userDataRepository: UserDataRepository, val passwordEncoder: PasswordEncoder, val jwtService: JWTService) {
 
     @GetMapping("/email")
